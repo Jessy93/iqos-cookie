@@ -1,0 +1,82 @@
+@import url('./_minireset.css');
+@font-face {
+  font-family: 'IQOS';
+  src:  url('./fonts/IQOS-Regular.woff2') format('woff2'),
+        url('./fonts/IQOS-Bold.woff2') format('woff2');
+}
+
+body {
+  font-family: IQOS, -apple-system, Arial, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #404040;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 30px;
+  margin: 100px auto 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: inherit;
+}
+
+.clr-org {color: #FF7009;}
+
+.cookie-img {cursor: pointer;}
+
+#container {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 360px);
+}
+
+ul.actions {
+  margin-top: -100px;
+  padding-left: 26px;
+}
+
+ul.actions li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+ul.actions li:first-child {margin-bottom: 21px;}
+
+ul.actions li span.numb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 49px;
+  width: 49px;
+  margin-right: 14px;
+  border: 2px solid #FB7125;
+  border-radius: 50%;
+}
+
+#main.animated .actions {display: none;}
+#main #container svg {
+  position: absolute;
+  top: -240px;
+  left: 0;
+  height: calc(100% + 360px) !important;
+  width: 100vw !important;
+}
+@media screen and (max-width: 320px) {
+  .title {font-size: 28px;}
+  ul.actions {margin-top: -60px;padding-left: 6px;}
+}

@@ -1,0 +1,70 @@
+@import url('./_minireset.css');
+@font-face {
+  font-family: 'IQOS';
+  src:  url('./fonts/IQOS-Regular.woff2') format('woff2'),
+        url('./fonts/IQOS-Bold.woff2') format('woff2');
+}
+
+body {
+  font-family: IQOS, -apple-system, Arial, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #404040;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 30px;
+  margin: 20px auto 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: inherit;
+}
+
+.clr-org {color: #FF7009;}
+
+.cookie-img {cursor: pointer;}
+
+ul.actions {padding-left: 26px;}
+
+ul.actions li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+ul.actions li:first-child {margin-bottom: 21px;}
+
+ul.actions li span.numb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 49px;
+  width: 49px;
+  margin-right: 14px;
+  border: 2px solid #FB7125;
+  border-radius: 50%;
+}
+
+
+#container.animated {margin: -110px auto 0;}
+
+#container.animated .cookie-img,
+#container.animated .actions {display: none;}
+
+#container #svg {display: none}
+#container.animated #svg {display: flex;}
+#container.animated #svg svg {position: absolute; top: 0; left: 0;}
