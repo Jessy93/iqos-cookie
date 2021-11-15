@@ -20,32 +20,37 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .title {
   font-size: 32px;
   line-height: 30px;
-  margin: 100px auto 80px;
+  margin: 10px auto 80px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: inherit;
+  height: auto;
 }
 
 .clr-org {color: #FF7009;}
 
 .cookie-img {cursor: pointer;}
 
+.content-wrapper {
+  position: relative;
+  max-height: 230px;
+  width: 100%;
+}
 #container {
   position: relative;
   width: 100vw;
-  height: calc(100vh - 360px);
+  height: calc(100vh - 190px);
 }
 
 ul.actions {
-  margin-top: -100px;
   padding-left: 26px;
 }
 
@@ -70,13 +75,60 @@ ul.actions li span.numb {
 
 #main.animated .actions {display: none;}
 #main #container svg {
-  position: absolute;
-  top: -240px;
+  position: fixed;
+  top: -40px;
   left: 0;
-  height: calc(100% + 360px) !important;
-  width: 100vw !important;
 }
+#main.animated #container svg {top: 0;}
+
 @media screen and (max-width: 320px) {
   .title {font-size: 28px;}
   ul.actions {margin-top: -60px;padding-left: 6px;}
+}
+
+
+
+
+
+
+
+.effect-sequins {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+#container-sequins {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+#sequin {
+  position: absolute;
+  /* display: inline-block; */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #fc0 transparent;
+  opacity: 0.0;
+  animation: glitter 6s linear 0s infinite normal;
+}
+/*CSS3 keyframes for glittering effect*/
+@keyframes glitter {
+  0% {
+    -webkit-transform: scale(0.3) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    -webkit-transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(0.3) rotate(720deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.3) rotate(0deg);
+    opacity: 0;
+  }
 }
