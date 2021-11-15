@@ -80,7 +80,7 @@ ul.actions li span.numb {
   left: 0;
 }
 
-#main.animated #container svg {top: 0;}
+#main.animated #container svg {top: 80px;}
 
 @media screen and (max-width: 320px) {
   .title {font-size: 28px;}
