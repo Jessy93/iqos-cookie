@@ -206,7 +206,7 @@ container.addEventListener('click', () => {
     setTimeout(() => {
         initDrawingCanvas(); // resetup to window frame
         requestAnimationFrame(loop); // resetup to window frame
-    }, 1000);
+    }, 700);
 })
 
 function loop() {
