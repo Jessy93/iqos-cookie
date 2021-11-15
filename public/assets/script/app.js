@@ -1,37 +1,39 @@
-console.log(0);
-import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
+import lottieWeb from 'https://cdn.skypack.dev/pin/lottie-web@v5.8.1-gbfLvwNWs7S0Tqw223au/mode=imports,min/optimized/lottie-web.js';
 
+let main = document.getElementById('main');
 let container = document.getElementById('container');
-let svg = document.getElementById('svg');
 let state = 'play';
 
 let animation = lottieWeb.loadAnimation({
-  container: svg,
+  container: container,
   path: 'data.json',
   renderer: 'svg',
   loop: false,
   autoplay: false,
   name: "Demo Animation",
-  // animationData: text_demo_data,
 });
 
-animation.goToAndStop(0, true);
+
+// animation.animationData.layers[1].nm = 'qqq';
+// animation.animationData.layers[1].t.d.k[0].s.t = 'qqq';
+
+// animation.renderer.data.layers[1].nm = "sdgjfhfjs"
+// animation.renderer.data.layers[1].t.d.k[0].s.t = "sdgjfhfjs"
+
+
+// animation.renderer.elements[0].updateDocumentData({t:'new text'}, 0);
+
+animation.goToAndStop(10, true);
 
 container.addEventListener('click', () => {
-  container.classList.add('animated');
+  main.classList.add('animated');
   if(state === 'play') {
-   animation.playSegments([0, 144], true);
+    animation.renderer.elements[1].textProperty.currentData.t = "sdgjfhfjs"
+    animation.playSegments([10, 144], true);
     state = 'pause';
-    console.log(1);
-  } else {
-    animation.playSegments([0, 0], true);
-    state = 'play';
-    console.log(2);
   }
 });
 
 // Text Random
 const textArray = ['1a','2b', '3c', '4e', '5f'];
 let phrase = textArray[Math.floor(Math.random()*textArray.length)];
-console.log(phrase);
-text_demo_data.layers[0].t.d.k[0].s.t = phrase;
