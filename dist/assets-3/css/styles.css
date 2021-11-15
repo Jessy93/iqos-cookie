@@ -41,7 +41,7 @@ body {
 
 .content-wrapper {
   position: relative;
-  max-height: 230px;
+  max-height: 100px;
   width: 100%;
 }
 #container {
@@ -79,15 +79,13 @@ ul.actions li span.numb {
   top: -40px;
   left: 0;
 }
+
 #main.animated #container svg {top: 0;}
 
 @media screen and (max-width: 320px) {
   .title {font-size: 28px;}
-  ul.actions {margin-top: -60px;padding-left: 6px;}
+  ul.actions {padding-left: 6px;}
 }
-
-
-
 
 
 
