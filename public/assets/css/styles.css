@@ -71,7 +71,7 @@ ul.actions li span.numb {
 #main.animated .actions {opacity: 0;}
 #main #container svg {
   position: fixed;
-  top: -20px;
+  top: 0;
   left: 0;
 }
 
@@ -81,6 +81,7 @@ ul.actions li span.numb {
 }
 
 
+/* Styles for Fireworks */
 .wrapper-sequins {
   position: absolute;
   width: 100vw;
@@ -110,5 +111,22 @@ ul.actions li span.numb {
   width: 120vw;
   height: 100vh;
   pointer-events: none;
+  z-index: 20;
   margin: 0 auto;
+}
+
+
+/* Text down */
+.secret-text {
+  background: linear-gradient(117.41deg, #F2F4F3 -1.81%, #F1F1F1 27.28%, #F2F2F2 98.77%);
+  transition: all .5s ease;
+  margin: 0 80px;
+  padding: 35px 5px;
+  max-height: 150px;
+  max-width: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  opacity: 0;
+  animation: all .5s cubic-bezier(0.60,1,0.70,0) 0s 1 normal;
 }

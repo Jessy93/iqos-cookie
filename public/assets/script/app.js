@@ -33,12 +33,33 @@ let animation = lottieWeb.loadAnimation({ // Animation configuration
 
 animation.goToAndStop(10, true); // start animation and pause her in state 10
 
-container.addEventListener('click', () => { 
+container.addEventListener('click', () => {
+  
+
   main.classList.add('animated');
   if(state === 'play') {
-    animation.renderer.elements[1].textProperty.currentData.t = "sdgjfhfjs"
     animation.playSegments([10, 144], true);
+    makerText();
     state = 'pause';
   }
 });
 
+
+
+// make a menu down of text
+  function makerText() {
+    let rect = container.getBoundingClientRect();
+    console.log(rect.top, rect.right, rect.bottom, rect.left);
+
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <div class="secret-text"
+        style=" position: fixed;
+          top: ${rect.top - 10}px;
+          left: ${rect.left}px;
+          opacity: ${1};
+          max-width: fit-content;
+      ">${text}</div>
+    `;
+    setTimeout(() => {container.append(div)}, 2000);
+  }

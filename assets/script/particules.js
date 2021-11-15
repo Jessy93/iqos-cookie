@@ -158,7 +158,7 @@ function createExploader() {
 
 function createParticles() {
     for (var i = 0; i < 256; i++) {
-        var p0 = new Point(viewWidth * 0.5, viewHeight * 0.5);
+        var p0 = new Point(viewWidth * 0.5, viewHeight * 0.2);
         var p1 = new Point(Math.random() * viewWidth, Math.random() * viewHeight);
         var p2 = new Point(Math.random() * viewWidth, Math.random() * viewHeight);
         var p3 = new Point(Math.random() * viewWidth, viewHeight + 64);
@@ -203,8 +203,10 @@ function draw() {
 /////--- Run ---/////
 
 container.addEventListener('click', () => {
-  initDrawingCanvas();
-  requestAnimationFrame(loop);
+    setTimeout(() => {
+        initDrawingCanvas(); // resetup to window frame
+        requestAnimationFrame(loop); // resetup to window frame
+    }, 1000);
 })
 
 function loop() {
