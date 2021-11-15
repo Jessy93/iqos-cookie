@@ -31,9 +31,6 @@ container.addEventListener('click', () => {
     animation.renderer.elements[1].textProperty.currentData.t = "sdgjfhfjs"
     animation.playSegments([10, 144], true);
     state = 'pause';
-  } else {
-    animation.playSegments([0, 0], true);
-    state = 'play';
   }
 });
 
