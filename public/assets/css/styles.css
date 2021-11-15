@@ -111,7 +111,7 @@ ul.actions li span.numb {
   width: 120vw;
   height: 100vh;
   pointer-events: none;
-  z-index: 20;
+  z-index: 10;
   margin: 0 auto;
 }
 
@@ -130,5 +130,5 @@ ul.actions li span.numb {
   opacity: 0;
   animation: all 5s ease-in-out;
   transform: scale(0) rotateY(-90deg);
-  
+  z-index: 11;  
 }
