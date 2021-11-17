@@ -21,6 +21,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 
 .title {
@@ -71,7 +72,7 @@ ul.actions li span.numb {
 #main.animated .actions {opacity: 0;}
 #main #container svg {
   position: fixed;
-  top: -20px;
+  top: 0;
   left: 0;
 }
 
@@ -81,6 +82,7 @@ ul.actions li span.numb {
 }
 
 
+/* Styles for Fireworks */
 .wrapper-sequins {
   position: absolute;
   width: 100vw;
@@ -93,21 +95,41 @@ ul.actions li span.numb {
   height: 100vh;
 }
 
-#canvas-container-div {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 100%;
-  height: 100%;
+.wrapper-scene {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
 }
 
-#canvas {
+.scene {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 100%;
-  height: 100%;
-  background: transparent;
+  max-width: 1200px;
+  max-height: 1200px;
+  width: 120vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
+  margin: 0 auto;
+}
+
+
+/* Text down */
+#message {
+  background: linear-gradient(117.41deg, #F2F4F3 -1.81%, #F1F1F1 27.28%, #F2F2F2 98.77%);
+  transition: all .5s ease;
+  margin: 0 80px;
+  padding: 35px 5px;
+  max-height: 150px;
+  max-width: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  opacity: 0;
+  animation: all 5s ease-in-out;
+  transform: scale(0) rotateY(-90deg);
+  z-index: 11;  
 }
