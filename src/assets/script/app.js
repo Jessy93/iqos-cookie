@@ -1,3 +1,4 @@
+window.scrollTo(0,1);
 // variable main container for animation and state play when animation is playing// Text Random
 const textArray = [
   'Не стоит тратить время и силы на мелочи, нужно думать о главном.',
@@ -16,6 +17,8 @@ const textArray = [
 let text = textArray[Math.floor(Math.random()*textArray.length)];
 let main = document.getElementById('main');
 let container = document.getElementById('container');
+let thanks = document.getElementById('thanks');
+let btn = document.getElementById('button');
 let state = 'play';
 
 let animation = lottie.loadAnimation({
@@ -40,6 +43,7 @@ container.addEventListener('click', () => {
 let isStartText = false;
 let isStartParticle = false;
 animation.onEnterFrame = function(e) {
+    a = e.currentTime;
   if ( e.currentTime > 40 && !isStartParticle ) {
     isStartParticle = true;
     requestAnimationFrame(loop);
@@ -48,15 +52,27 @@ animation.onEnterFrame = function(e) {
     isStartText = true;
     makerText();
   }
+  if (isStartParticle && isStartText) {
+    btn.classList.add('visible');
+    congrats();
+  }
 };
 
 function makerText() {
   let rect = container.getBoundingClientRect();
   const div = document.getElementById('message');
   div.classList.add('message_active');
-  div.style.top = `${rect.top - 10}px`;
+  div.style.top = `${rect.top - 30}px`;
   div.innerHTML = `<div class="secret-text">${text}</div>`;
   container.append(div);
+}
+
+function congrats() {
+  btn.addEventListener('click', ()=> {
+      console.log(1);
+    main.classList.add('unvisible');
+    thanks.classList.add('visible');
+  })
 }
 
 const TWO_PI = Math.PI * 2;
@@ -70,7 +86,7 @@ const colors = [
 ];
 
 // canvas settings
-var viewWidth = window.innerWidth < 769 ? window.innerWidth : 768,
+var viewWidth = window.innerWidth,
     viewHeight = window.innerHeight < 1025 ? window.innerHeight : 1025,
     drawingCanvas = document.getElementById("particles"),
     ctx,
